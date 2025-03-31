@@ -1,7 +1,10 @@
 import "./App.css";
+import Homepage from "./pages/Homepage";
 
-function App() {
-  return <p className="text-3xl font-bold underline">Hello world!</p>;
+export default function App() {
+  return (
+    <p className="container mx-auto flex flex-col justify-center items-center h-screen">
+      <Homepage />
+    </p>
+  );
 }
-
-export default App;
