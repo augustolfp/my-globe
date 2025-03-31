@@ -70,16 +70,16 @@ export default function Homepage() {
     <div
       className="border-solid border-2 border-purple-300 w-[700px] aspect-square relative"
       style={{
-        transform: "rotateX(30deg) rotateY(30deg)",
+        // transform: "rotateX(60deg) rotateY(60deg)",
         transformStyle: "preserve-3d",
-        // transform: "perspective(1px)",
+        transform: "perspective(1240px)",
       }}
     >
       {coordinates.map(({ x, y, z }) => (
         <Dot
           x={Math.round(5 * x)}
           y={5 * Math.round(y)}
-          z={-5 * Math.round(z)}
+          z={5 * Math.round(z)}
         />
       ))}
     </div>
