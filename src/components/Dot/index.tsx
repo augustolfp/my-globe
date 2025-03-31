@@ -9,7 +9,9 @@ export default function Dot({ x, y, z }: Props) {
     <div
       style={{
         position: "absolute",
-        transform: `translate3d(${x}px,${y + 400}px, ${z}px)`,
+        top: 0,
+        left: 0,
+        transform: `translate3d(${x}px,${y}px, ${z}px)`,
       }}
     >
       <div className="w-2 aspect-square bg-orange-400"></div>
