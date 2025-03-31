@@ -1,13 +1,18 @@
 interface Props {
-  x: string;
-  y: string;
-  z: string;
+  x: number;
+  y: number;
+  z: number;
 }
 
 export default function Dot({ x, y, z }: Props) {
   return (
-    <div style={{ position: "absolute", left: y, bottom: z }}>
-      <div className="w-2 aspect-square bg-orange-400 -translate-x-1/2 translate-y-1/2"></div>
+    <div
+      style={{
+        position: "absolute",
+        transform: `translateZ(${z}px) translateY(${y}px) translateX(${x}px)`,
+      }}
+    >
+      <div className="w-6 aspect-square bg-orange-400"></div>
     </div>
   );
 }

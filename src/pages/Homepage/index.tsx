@@ -32,16 +32,6 @@ export default function Homepage() {
       z: 0,
     },
     {
-      x: 500,
-      y: 0,
-      z: 500,
-    },
-    {
-      x: 0,
-      y: 0,
-      z: 500,
-    },
-    {
       x: 0,
       y: 500,
       z: 0,
@@ -51,22 +41,39 @@ export default function Homepage() {
       y: 500,
       z: 0,
     },
+
+    {
+      x: 0,
+      y: 0,
+      z: -500,
+    },
+    {
+      x: 500,
+      y: 0,
+      z: -500,
+    },
     {
       x: 0,
       y: 500,
-      z: 500,
+      z: -500,
     },
     {
       x: 500,
       y: 500,
-      z: 500,
+      z: -500,
     },
   ];
 
   return (
-    <div className="bg-purple-400 w-[1000px] aspect-square relative">
+    <div
+      className="border-solid border-2 border-purple-300 w-[700px] aspect-square relative"
+      style={{
+        transform: "rotateX(30deg) rotateY(30deg)",
+        transformStyle: "preserve-3d",
+      }}
+    >
       {square3D.map(({ x, y, z }) => (
-        <Dot x={`${x}px`} y={`${y}px`} z={`${z}px`} />
+        <Dot x={x} y={y} z={z} />
       ))}
     </div>
   );
