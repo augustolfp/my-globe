@@ -1,6 +1,8 @@
 import Dot from "../../components/Dot";
+import coordinates from "../../assets/coordinates.json";
 
 export default function Homepage() {
+  console.log(coordinates[0]);
   const square2D = [
     {
       x: 0,
@@ -70,10 +72,15 @@ export default function Homepage() {
       style={{
         transform: "rotateX(30deg) rotateY(30deg)",
         transformStyle: "preserve-3d",
+        // transform: "perspective(1px)",
       }}
     >
-      {square3D.map(({ x, y, z }) => (
-        <Dot x={x} y={y} z={z} />
+      {coordinates.map(({ x, y, z }) => (
+        <Dot
+          x={Math.round(5 * x)}
+          y={5 * Math.round(y)}
+          z={-5 * Math.round(z)}
+        />
       ))}
     </div>
   );

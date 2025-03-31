@@ -9,10 +9,12 @@ export default function Dot({ x, y, z }: Props) {
     <div
       style={{
         position: "absolute",
-        transform: `translateZ(${z}px) translateY(${y}px) translateX(${x}px)`,
+        transform: `translateZ(${z}px) translateY(${
+          y + 400
+        }px) translateX(${x}px)`,
       }}
     >
-      <div className="w-6 aspect-square bg-orange-400"></div>
+      <div className="w-2 aspect-square bg-orange-400"></div>
     </div>
   );
 }
