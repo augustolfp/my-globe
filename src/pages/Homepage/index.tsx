@@ -1,9 +1,10 @@
 import Dot from "../../components/Dot";
-import cartesianCoordinates from "../../assets/cartesianCoordinates.json";
+// import cartesianCoordinates from "../../assets/cartesianCoordinates.json";
 // import geoCoordinates from "../../assets/geoCoordinates.json";
+import coordinatesData from "../../assets/coordinatesData.json";
 
 export default function Homepage() {
-  const radius = Math.min(...cartesianCoordinates.map(({ y }) => y));
+  const radius = Math.min(...coordinatesData.map(({ y }) => y));
   return (
     <div
       className="bg-black w-4 aspect-square relative"
@@ -12,7 +13,7 @@ export default function Homepage() {
       }}
     >
       <p className="absolute top-4 left-6 font-bold">Origem</p>
-      {cartesianCoordinates.map(({ x, y, z }) => (
+      {coordinatesData.map(({ x, y, z }) => (
         <Dot
           x={-10 * x}
           y={-10 * z}
