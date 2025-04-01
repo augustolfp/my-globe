@@ -1,6 +1,4 @@
 import Dot from "../../components/Dot";
-// import cartesianCoordinates from "../../assets/cartesianCoordinates.json";
-// import geoCoordinates from "../../assets/geoCoordinates.json";
 import coordinatesData from "../../assets/coordinatesData.json";
 
 export default function Homepage() {
