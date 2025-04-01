@@ -1,8 +1,21 @@
 import Dot from "../../components/Dot";
 import coordinatesData from "../../assets/coordinatesData.json";
+import { useEffect, useState } from "react";
 
 export default function Homepage() {
-  const rotationAngle = (180 * Math.PI) / 180;
+  const [rotationAngleInDegrees, setRotationAngleInDegrees] = useState(0);
+  const rotationAngle = (rotationAngleInDegrees * Math.PI) / 180;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (rotationAngleInDegrees === 360) {
+        setRotationAngleInDegrees(0);
+      }
+
+      setRotationAngleInDegrees((prev) => prev + 1);
+    }, 300);
+    return () => clearInterval(intervalId);
+  }, []);
 
   const cartesianCoordinates = coordinatesData.map(({ phi, theta, rho }) => {
     const x = Math.cos(phi) * Math.cos(theta + rotationAngle) * rho;
@@ -25,9 +38,9 @@ export default function Homepage() {
       <p className="absolute top-4 left-6 font-bold">Origem</p>
       {cartesianCoordinates.map(({ x, y, z }) => (
         <Dot
-          x={-10 * x}
-          y={-10 * z}
-          z={10 * y}
+          x={-8 * x}
+          y={-8 * z}
+          z={8 * y}
           opacity={
             y > 0
               ? 1
